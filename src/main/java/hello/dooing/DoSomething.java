@@ -6,6 +6,6 @@ public class DoSomething {
 
     public void hello() {
         out.println("hello");
-        out.println("hello");
+        out.println("bug fix!!");
     }
 }
