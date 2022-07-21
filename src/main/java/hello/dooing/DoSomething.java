@@ -6,6 +6,8 @@ public class DoSomething {
 
     public void hello() {
         out.println("hello");
+        out.println("hello2");
+        out.println("hello3");
         out.println("bug fix!!");
     }
 }
