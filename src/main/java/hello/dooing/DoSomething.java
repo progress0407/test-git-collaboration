@@ -9,5 +9,6 @@ public class DoSomething {
         out.println("hello2");
         out.println("hello3");
         out.println("bug fix!!");
+        out.println("bug fix 2!!");
     }
 }
