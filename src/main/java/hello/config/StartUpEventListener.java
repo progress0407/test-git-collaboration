@@ -20,23 +20,23 @@ public class StartUpEventListener implements ApplicationListener<ContextRefreshe
     public void onApplicationEvent(final ContextRefreshedEvent event) {
 
         final Team teamA = Team.builder()
-                .name("team-1")
+                .name("팀-1")
                 .build();
 
         final Team teamB = Team.builder()
-                .name("team-1")
+                .name("팀-1")
                 .build();
 
         final User user1 = User.builder()
-                .name("user-1")
+                .name("사용자-1")
                 .team(teamA)
                 .build();
         final User user2 = User.builder()
-                .name("user-1")
+                .name("사용자-1")
                 .team(teamA)
                 .build();
         final User user3 = User.builder()
-                .name("user-1")
+                .name("사용자-1")
                 .team(teamB)
                 .build();
 
