@@ -1,3 +1,6 @@
 [submodule "src/main/resources"]
 	path = src/main/resources
 	url = https://github.com/progress0407/sub-module-test.git
+[submodule "src/main/resources/config"]
+	path = src/main/resources/config
+	url = https://github.com/progress0407/sub-module-test.git
