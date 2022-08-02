@@ -1,6 +1,10 @@
 spring:
   default:
     dev
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
 
 constant:
   value: hello # over-write? 됨!
