@@ -31,6 +31,8 @@ public class StartUpEventListener implements ApplicationListener<ContextRefreshe
         log.info("---------------------------------");
         log.info("---------------------------------");
 
+        log.info("---------- hotfix 0.01.1 ------------");
+
         initData();
     }
 
