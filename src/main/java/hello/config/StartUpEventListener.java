@@ -30,7 +30,6 @@ public class StartUpEventListener implements ApplicationListener<ContextRefreshe
         log.info("Start Up Runner :  {}", yamlConstant);
         log.info("---------------------------------");
         log.info("---------------------------------");
-        log.info("----------- hot fix -------------");
 
 
         initData();
