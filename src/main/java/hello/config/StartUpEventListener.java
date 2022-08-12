@@ -33,6 +33,8 @@ public class StartUpEventListener implements ApplicationListener<ContextRefreshe
 
         log.info("-----------  fix bug  -----------");
 
+        log.info("----------- hot fix  ------------");
+
         initData();
     }
 
