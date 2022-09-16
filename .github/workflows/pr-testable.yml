@@ -8,12 +8,12 @@
 name: Java CI with Gradle
 
 on:
-  push:
+#  push:
 #    branches: [ "**feat**"]
-    branches:
-      - feat**
-#  pull_request:
-#    branches: [ "main" ]
+#    branches:
+#      - feat**
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
