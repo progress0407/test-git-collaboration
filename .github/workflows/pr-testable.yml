@@ -28,4 +28,4 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Gradle
-        uses: gradle/gradle
+        uses: ./gradlew test
