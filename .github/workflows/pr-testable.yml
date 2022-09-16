@@ -11,7 +11,7 @@ on:
 #  push:
 #    branches: [ "**feat**"]
   pull_request:
-    branches: [ "**feat**" ]
+    branches: [ "main" ]
 
 jobs:
   build:
