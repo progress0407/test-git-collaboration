@@ -39,25 +39,26 @@ jobs:
 #      with:
 #        arguments: build
 
-#    - name: if fail test
-#      uses: actions/github-script@0.2.0
-#      with:
-#        script: |
-#          await github.pulls.createReview({
-#              ...context.repo,
-#              pull_number,
-#              body:"테스트코드를 다시 확인해주세요. ",
-#              event: "REQUEST_CHANGES"
-#            })
-#          await github.pulls.update({
-#            ...context.repo,
-#            pull_number,
-#            state: "closed"
-#          })
+    - name: if fail test
+      uses: actions/github-script@0.2.0
+      with:
+        github-token: ${{github.token}}
+        script: |
+          await github.pulls.createReview({
+              ...context.repo,
+              pull_number,
+              body:"테스트코드를 다시 확인해주세요. ",
+              event: "REQUEST_CHANGES"
+            })
+          await github.pulls.update({
+            ...context.repo,
+            pull_number,
+            state: "closed"
+          })
 #        token: ${{ github.token }}
 #        token: ${{ secrets.TOKEN }}
 #        token: ${{ secrets.GITHUB_TOKEN }}
-#      if: failure()
+      if: failure()
 
     - name: 테스트 실패 시, 실패한 코드 라인에 Check 코멘트를 등록합니다
       uses: mikepenz/action-junit-report@v3
