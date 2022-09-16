@@ -31,19 +31,3 @@ jobs:
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
         arguments: build
-    - name: if fail test
-      uses: actions/github-script@0.2.0
-      with:
-        script: |
-          await github.pulls.createReview({
-              ...context.repo,
-              pull_number,
-              body:"테스트코드를 다시 확인해주세요. ",
-              event: "REQUEST_CHANGES"
-            })
-            await github.pulls.update({
-              ...context.repo,
-              pull_number,
-              state: "closed"
-            })
-      if: failure()
