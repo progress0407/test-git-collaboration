@@ -16,6 +16,8 @@ on:
 #    branches: [ "**feat**" ]
     branches:
       - feature/**
+      - main
+      - feature/be/test
 
 jobs:
   build:
