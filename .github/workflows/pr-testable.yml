@@ -33,7 +33,7 @@ jobs:
         arguments: build
     - name: shell test
       shell: bash
-      run: |
+      run:
         echo "pwd"
     - name: if fail test
       uses: actions/github-script@0.2.0
