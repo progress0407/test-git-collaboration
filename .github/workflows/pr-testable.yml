@@ -13,7 +13,9 @@ on:
 #    branches:
 #      - feat**
   pull_request:
-    branches: [ "**feat**" ]
+#    branches: [ "**feat**" ]
+    branches:
+      - feat**
 
 jobs:
   build:
@@ -47,11 +49,11 @@ jobs:
         script: |
           const pull_number = ${{ pull_request.number }}
           await github.pulls.createReview({
-              ...context.repo,
-              pull_number,
-              body:"테스트코드를 다시 확인해주세요. ",
-              event: "REQUEST_CHANGES"
-            })
+            ...context.repo,
+            pull_number,
+            body:"테스트코드를 다시 확인해주세요. ",
+            event: "REQUEST_CHANGES"
+          })
           await github.pulls.update({
             ...context.repo,
             pull_number,
