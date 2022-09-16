@@ -34,9 +34,6 @@ jobs:
       shell: bash
       run: | 
         echo "pwd & ls -al"
-        echo "${{ github.ref }}"
-        echo '${{ github.ref }}'
-        echo ${{ pull_request.number }}
 
     - name: Build with Gradle
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
@@ -60,9 +57,6 @@ jobs:
             pull_number,
             state: "closed"
           })
-#        token: ${{ github.token }}
-#        token: ${{ secrets.TOKEN }}
-#        token: ${{ secrets.GITHUB_TOKEN }}
       if: failure()
 
     - name: 테스트 실패 시, 실패한 코드 라인에 Check 코멘트를 등록합니다
