@@ -1,0 +1,15 @@
+spring:
+  default:
+    dev
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+
+constant:
+  value: hello # over-write? 됨!
+
+logging.level:
+  org.hibernate:
+    SQL: debug
+    type: trace
