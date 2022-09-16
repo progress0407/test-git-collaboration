@@ -42,9 +42,8 @@ jobs:
     - name: if fail test
       uses: actions/github-script@0.2.0
       with:
-#        token: ${{ github.token }}
-#        token: ${{ secrets.TOKEN }}
-        token: ${{ secrets.GITHUB_TOKEN }}
+
+#        token: ${{ secrets.GITHUB_TOKEN }}
         script: |
           await github.pulls.createReview({
               ...context.repo,
@@ -57,4 +56,6 @@ jobs:
             pull_number,
             state: "closed"
           })
+        token: ${{ github.token }}
+#        token: ${{ secrets.TOKEN }}
       if: failure()
