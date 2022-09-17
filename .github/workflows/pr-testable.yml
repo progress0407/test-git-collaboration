@@ -72,8 +72,10 @@ jobs:
       with:
         github-token: ${{ github.token }}
         script: |
+          console.log(">>>>" + context.payload.pull_request.number)
           console.log(context)
-          console.log(context.payload.pull_request.number)
+          console.log(core)
+          console.log(github)
       if: always()
 
     - name: 테스트 실패 시, 실패한 코드 라인에 Check 코멘트를 등록합니다
