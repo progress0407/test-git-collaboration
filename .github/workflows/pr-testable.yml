@@ -16,7 +16,7 @@ on:
   pull_request:
 #    branches: [ "**feat**" ]
     branches:
-      - *
+      - '*'
     types:
       synchronize
 #      - main
