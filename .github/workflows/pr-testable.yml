@@ -73,12 +73,7 @@ jobs:
         github-token: ${{ github.token }}
         script: |
           console.log(context)
-          github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: '👋 Thanks for reporting!'
-            })
+          console.log(context.payload.pull_request.number)
       if: always()
 
     - name: 테스트 실패 시, 실패한 코드 라인에 Check 코멘트를 등록합니다
