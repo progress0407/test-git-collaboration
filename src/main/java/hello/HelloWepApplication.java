@@ -7,5 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HelloWepApplication {
     public static void main(String[] args) {
         SpringApplication.run(HelloWepApplication.class, args);
+
     }
 }
