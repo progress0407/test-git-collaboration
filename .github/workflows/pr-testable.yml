@@ -93,6 +93,12 @@ jobs:
 
     - name: Do something with a passing build
       if: steps.wait-for-build.outputs.conclusion == 'success'
+      shell: bash
+      run: |
+        echo "success"
 
     - name: Do something with a failing build
       if: steps.wait-for-build.outputs.conclusion == 'failure'
+      shell: bash
+        run: |
+          echo "success"
