@@ -41,6 +41,14 @@ jobs:
       run: | 
         echo "pwd & ls -al"
 
+    - name: Wait for build to succeed
+      uses: fountainhead/action-wait-for-check@v1.0.0
+      id: wait-for-build
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        checkName: Build with Gradle
+        ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
     - name: Build with Gradle
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
@@ -83,13 +91,7 @@ jobs:
 #        report_paths: '**/build/test-results/test/TEST-*.xml'
 #        token: ${{ github.token }}
 
-    - name: Wait for build to succeed
-      uses: fountainhead/action-wait-for-check@v1.0.0
-      id: wait-for-build
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        checkName: Build with Gradle
-        ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
 
     - name: Do something with a passing build
       if: steps.wait-for-build.outputs.conclusion == 'success'
