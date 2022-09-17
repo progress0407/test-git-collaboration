@@ -49,13 +49,13 @@ jobs:
       with:
         arguments: build
 
-    - name: Wait for build to succeed
-        uses: fountainhead/action-wait-for-check@v1.0.0
-        id: wait-for-build
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          checkName: Build with Gradle
-          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+#    - name: Wait for build to succeed
+#        uses: fountainhead/action-wait-for-check@v1.0.0
+#        id: wait-for-build
+#        with:
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#          checkName: Build with Gradle
+#          ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
 #    - name: If Fail Test
 #      uses: actions/github-script@0.2.0
