@@ -7,15 +7,16 @@
 
 name: Java CI with Gradle
 
-on: [pull_request]
+on:
+#on: [pull_request]
 #  push:
 #    branches: [ "**feat**"]
 #    branches:
 #      - feat**
-#  pull_request:
+  pull_request:
 #    branches: [ "**feat**" ]
-#    branches:
-#      - feature/**
+    branches:
+      - feature/*
 #      - main
 #      - feature/be/test
 
