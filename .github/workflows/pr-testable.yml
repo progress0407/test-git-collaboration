@@ -42,10 +42,10 @@ jobs:
       run: | 
         echo "pwd & ls -al"
 
-    - name: Build with Gradle
-      uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
-      with:
-        arguments: build
+#    - name: Build with Gradle
+#      uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+#      with:
+#        arguments: build
 
 #    - name: If Fail Test
 #      uses: actions/github-script@0.2.0
@@ -74,7 +74,6 @@ jobs:
         script: |
           console.log(">>>>" + context.payload.pull_request.number)
           console.log(context)
-          console.log(core)
           console.log(github)
       if: always()
 
