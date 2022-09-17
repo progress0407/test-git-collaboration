@@ -100,5 +100,5 @@ jobs:
     - name: Do something with a failing build
       if: steps.wait-for-build.outputs.conclusion == 'failure'
       shell: bash
-        run: |
-          echo "success"
+      run: |
+        echo "success"
