@@ -62,7 +62,8 @@ jobs:
             pull_number,
             state: "closed"
           })
-      if: failure()
+#      if: failure()
+      if: always()
 
     - name: 테스트 실패 시, 실패한 코드 라인에 Check 코멘트를 등록합니다
       uses: mikepenz/action-junit-report@v3
