@@ -13,10 +13,12 @@ on:
 #    branches: [ "**feat**"]
 #    branches:
 #      - feat**
-  pull_request.synchronize:
+  pull_request:
 #    branches: [ "**feat**" ]
     branches:
       - feature/*
+    types:
+      synchronize
 #      - main
 #      - feature/be/test
 
