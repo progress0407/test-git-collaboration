@@ -17,8 +17,7 @@ on:
 #    branches: [ "**feat**" ]
     branches:
       - '*'
-    types:
-      synchronize
+    types: [ 'synchronize' , 'opened' ]
 #      - main
 #      - feature/be/test
 
