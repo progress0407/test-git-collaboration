@@ -47,24 +47,38 @@ jobs:
       with:
         arguments: build
 
-    - name: If Fail Test
+#    - name: If Fail Test
+#      uses: actions/github-script@0.2.0
+#      with:
+#        github-token: ${{ github.token }}
+#        script: |
+#          const pull_number = ${{ number }}
+#          await github.pulls.createReview({
+#            ...context.repo,
+#            pull_number,
+#            body:"테스트코드를 다시 확인해주세요. ",
+#            event: "REQUEST_CHANGES"
+#          })
+#          await github.pulls.update({
+#            ...context.repo,
+#            pull_number,
+#            state: "closed"
+#          })
+#      if: failure()
+#      if: always()
+
+    - name: Script Test
       uses: actions/github-script@0.2.0
       with:
         github-token: ${{ github.token }}
         script: |
-          const pull_number = ${{ number }}
-          await github.pulls.createReview({
-            ...context.repo,
-            pull_number,
-            body:"테스트코드를 다시 확인해주세요. ",
-            event: "REQUEST_CHANGES"
-          })
-          await github.pulls.update({
-            ...context.repo,
-            pull_number,
-            state: "closed"
-          })
-#      if: failure()
+          console.log(context)
+          github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '👋 Thanks for reporting!'
+            })
       if: always()
 
     - name: 테스트 실패 시, 실패한 코드 라인에 Check 코멘트를 등록합니다
